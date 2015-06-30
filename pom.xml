@@ -24,5 +24,7 @@
 		<module>simple-spring-mvc-example</module>
 		<module>spring-mvc-form-submit</module>
 		<module>spring-mvc-complex-form</module>
+		<module>spring-mvc-form-validation</module>
+		<module>spring-mvc-taglib-example</module>
 	</modules>
 </project>

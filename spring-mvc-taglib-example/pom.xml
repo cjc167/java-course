@@ -6,7 +6,7 @@
 		<artifactId>java-course</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>spring-mvc-form-submit</artifactId>
+	<artifactId>spring-mvc-taglib-example</artifactId>
 	<packaging>war</packaging>
 	
 	<dependencies>
@@ -15,6 +15,12 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.0.6.RELEASE</version>
 		</dependency>
+		
+		<dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.0</version>
+        </dependency>
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -72,6 +78,6 @@
 	</dependencies>
 	
 	<build>
-		<finalName>ChapterTwo</finalName>
+		<finalName>ChapterFour</finalName>
 	</build>
 </project>

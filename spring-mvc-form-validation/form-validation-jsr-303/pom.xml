@@ -3,13 +3,25 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>jane</groupId>
-		<artifactId>java-course</artifactId>
+		<artifactId>spring-mvc-form-validation</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>spring-mvc-form-submit</artifactId>
+	<artifactId>form-validation-jsr-303</artifactId>
 	<packaging>war</packaging>
 	
 	<dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.1.2.Final</version>
+		</dependency>
+		
+		<dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.0</version>
+        </dependency>
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -72,6 +84,6 @@
 	</dependencies>
 	
 	<build>
-		<finalName>ChapterTwo</finalName>
+		<finalName>ChapterFive</finalName>
 	</build>
 </project>

@@ -7,6 +7,7 @@ public class User {
 	private String username;
 	private String password;
 	private String sex;
+	private String age;
 	private String degree;
 	private List<String> interest;
 	
@@ -28,6 +29,12 @@ public class User {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
+	public String getAge() {
+		return age;
+	}
+	public void setAge(String age) {
+		this.age = age;
+	}
 	public String getDegree() {
 		return degree;
 	}
@@ -42,6 +49,6 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [username=" + username + ", password=" + password + ", sex=" + sex + ", degree=" + degree + ", interest=" + interest + "]";
+		return "User [username=" + username + ", password=" + password + ", sex=" + sex + ", age=" + age + ", degree=" + degree + ", interest=" + interest + "]";
 	}
 }
