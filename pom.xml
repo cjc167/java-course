@@ -27,5 +27,6 @@
 		<module>spring-mvc-form-validation</module>
 		<module>spring-mvc-taglib-example</module>
 		<module>spring-mvc-custom-annotation</module>
+		<module>simple-spring-jpa-example</module>
 	</modules>
 </project>
