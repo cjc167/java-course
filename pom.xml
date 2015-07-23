@@ -20,6 +20,7 @@
 			</plugin>
 		</plugins>
 	</build>
+	
 	<modules>
 		<module>simple-spring-mvc-example</module>
 		<module>spring-mvc-form-submit</module>
@@ -28,5 +29,6 @@
 		<module>spring-mvc-taglib-example</module>
 		<module>spring-mvc-custom-annotation</module>
 		<module>simple-spring-jpa-example</module>
+		<module>spring-mvc-tiles-integration</module>
 	</modules>
 </project>
