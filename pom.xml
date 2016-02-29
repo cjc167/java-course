@@ -30,5 +30,6 @@
 		<module>spring-mvc-custom-annotation</module>
 		<module>simple-spring-jpa-example</module>
 		<module>spring-mvc-tiles-integration</module>
+		<module>spring-security</module>
 	</modules>
 </project>
