@@ -64,7 +64,9 @@
 			</plugin>
 		</plugins>
 	</build>
+	
 	<modules>
 		<module>spring-security-helloworld</module>
+		<module>spring-security-custom-login</module>
 	</modules>
 </project>
