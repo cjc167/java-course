@@ -29,4 +29,4 @@ INSERT INTO `user_role` VALUES ('hippo', 'ROLE_ADMIN');
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('hippo', '12345678', '5a0fc352-3100-4a42-b1d3-2c62e68b9c6f', '0');
+INSERT INTO `users` VALUES ('hippo', '12345678', '5a0fc352-3100-4a42-b1d3-2c62e68b9c6f', '1');
