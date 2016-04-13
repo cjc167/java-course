@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+
+<!-- 	<bean id="springSecurityFilterChain" class="org.springframework.security.web.FilterChainProxy"> -->
+<!-- 		<security:filter-chain-map path-type="ant"> -->
+<!-- 			<security:filter-chain pattern="/css/**" filters="none" /> -->
+<!-- 			<security:filter-chain pattern="/images/**" filters="none" /> -->
+<!-- 			<security:filter-chain pattern="/login.jsp*" filters="none" /> -->
+<!-- 			<security:filter-chain pattern="/user/showLoginPage.action" filters="none" /> -->
+<!-- 			<security:filter-chain pattern="/**" filters=" -->
+<!-- 			      securityContextPersistenceFilter, -->
+<!-- 			      logoutFilter, -->
+<!-- 			      authenticationProcessingFilter, -->
+<!-- 			      exceptionTranslationFilter, -->
+<!-- 			      filterSecurityInterceptor -->
+<!-- 			"/> -->
+<!-- 		</security:filter-chain-map> -->
+<!-- 	</bean> -->
+	
+	<bean id="securityContextPersistenceFilter" class="org.springframework.security.web.access.intercept.FilterSecurityInterceptor">
+		<property name="authenticationManager" ref="authenticationManager" />
+		<property name="accessDecisionManager" ref="accessDecisionManager" />
+		<property name="securityMetadataSource" ref="customeFilterSecurityMetadataSource"/>
+	</bean>
+	
+	<bean id="accessDecisionManager" class="org.springframework.security.access.vote.AffirmativeBased">
+		<constructor-arg name="decisionVoters">
+			<list>
+				<ref bean="roleVoter"/>
+				<ref bean="authenticatedVoter"/>
+			</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter">
+		<property name="rolePrefix" value=""></property>
+	</bean>
+	
+	<bean id="authenticatedVoter" class="org.springframework.security.access.vote.AuthenticatedVoter" />
+
+
+	<!-- 
+		使用对话框方式认证
+		需要注意的是当我们同时定义了http-basic和form-login元素时, form-login将具有更高的优先级. 
+		即在需要认证的时候Spring Security将引导我们到登录页面, 而不是弹出一个窗口.	
+	 -->
+	<security:http auto-config="true" >
+		<security:http-basic />
+		<security:intercept-url pattern="/**" access="ROLE_USER,ROLE_ADMIN" method="GET"/>
+		<security:custom-filter ref="securityContextPersistenceFilter" after="FILTER_SECURITY_INTERCEPTOR"/>
+	</security:http>
+	
+	<security:authentication-manager alias="authenticationManager">
+<!-- 		<security:authentication-provider> -->
+<!-- 			<security:user-service> -->
+<!-- 				<security:user name="jane" password="1234" authorities="ROLE_USER"/> -->
+<!-- 			</security:user-service> -->
+
+<!-- 			<security:jdbc-user-service data-source-ref="dataSource"/> -->
+<!-- 		</security:authentication-provider> -->
+
+
+		<security:authentication-provider user-service-ref="userDetailsService">
+			<security:password-encoder hash="md5">
+			</security:password-encoder>
+		</security:authentication-provider>
+	</security:authentication-manager>
+	
+	<bean id="userDetailsService" class="org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl">
+		<property name="dataSource" ref="dataSource" />
+		<property name="enableGroups" value="true"/>
+	</bean>
+</beans>
