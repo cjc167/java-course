@@ -31,5 +31,6 @@
 		<module>simple-spring-jpa-example</module>
 		<module>spring-mvc-tiles-integration</module>
 		<module>spring-security</module>
+		<module>spring-mvc-ajax-submit</module>
 	</modules>
 </project>
