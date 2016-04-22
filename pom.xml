@@ -32,5 +32,6 @@
 		<module>spring-mvc-tiles-integration</module>
 		<module>spring-security</module>
 		<module>spring-mvc-ajax-submit</module>
+		<module>spring-mvc-plugins-datatable</module>
 	</modules>
 </project>
