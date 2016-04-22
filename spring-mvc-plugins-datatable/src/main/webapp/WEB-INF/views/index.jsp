@@ -14,19 +14,16 @@
 	</head>
 	<body>
 		<table id="users" class="display" cellspacing="0" width="100%">
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>用户名</th>
-				<th>密码</th>
-			</tr>
-		</thead>
-	</table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>用户名</th>
+					<th>密码</th>
+				</tr>
+			</thead>
+		</table>
 		
 		<script type="text/javascript">
-		var table = 
-		
-
 		$(document).ready(function(){
 			$('#users').DataTable({
 				"processing": true,
@@ -38,8 +35,8 @@
 				},
 				"columns": [
 				            {"data": "id", "orderable": true},
-				            {"data": "username", "orderable": false},
-				            {"data": "password", "orderable": false}
+				            {"data": "username", "orderable": true},
+				            {"data": "password", "orderable": true}
 				        ],
 				"lengthMenu": [[20,50,100], [20,50,100]],
 				"scrollCollapse": true,
