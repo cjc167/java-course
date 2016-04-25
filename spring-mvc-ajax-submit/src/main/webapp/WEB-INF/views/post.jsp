@@ -23,7 +23,13 @@
 					url: '${ctx}/ajax/post',
 					data: {'username': $("#username").val()},
 					success: function(data){
-						alert(data);
+						console.log(data);
+					},
+					error: function(e, status) {
+						console.log(e);
+						console.log(e.responseText);
+						console.log(e.status);
+						console.log(e.statusText);
 					}
 				});
 			});
