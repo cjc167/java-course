@@ -19,10 +19,12 @@
 		
 		<script type="text/javascript">
 			$("#button").click(function(){
-				alert("http://localhost:8080/spring-mvc-ajax-submit/ajax/get?username=" + $("#username").val());
-				$.get({
-					url: '${ctx}/ajax/get',
-					data: {'username': $("#username").val()}
+				$.post({
+					url: '${ctx}/ajax/post',
+					data: {'username': $("#username").val()},
+					success: function(data){
+						alert(data);
+					}
 				});
 			});
 		</script>
