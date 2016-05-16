@@ -60,8 +60,9 @@ public class HelloWorldController {
 		if("jane".equals(user.getUsername())) {
 			httpStatus = HttpStatus.CONFLICT;
 		}
+		
 		MultiValueMap<String, String> headers = new HttpHeaders();
-		headers.add("Content-Type", "text/plain;charset=UTF-8");
+		headers.add("Content-Type", "text/plain; charset=UTF-8");
 		
 		ResponseEntity<String> response = new ResponseEntity<String>(new Gson().toJson(user),  headers, httpStatus);
 		return response;
